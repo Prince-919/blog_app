@@ -3,6 +3,7 @@ import dbConnect from "./config/db.js";
 import { config } from "./config/config.js";
 import userRoute from "./user/userRoute.js";
 import authRoute from "./auth/authRoute.js";
+import globalError from "./middlewares/globalError.js";
 
 const app = express();
 
@@ -23,3 +24,5 @@ const serverStart = async () => {
 };
 
 serverStart();
+
+app.use(globalError);
