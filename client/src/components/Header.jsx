@@ -76,7 +76,7 @@ const Header = () => {
           </Dropdown>
         ) : (
           <Link to="/sign-in">
-            <Button gradientDuoTone="purpleToBlue" outline>
+            <Button className="gradient-bg" outline>
               Sign In
             </Button>
           </Link>
