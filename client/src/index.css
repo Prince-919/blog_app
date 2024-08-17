@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  height: 100vh;
+}
+
 .gradient-bg {
   background-image: linear-gradient(
     to right top,
@@ -34,4 +38,8 @@
     #a8eb12
   );
   border-radius: 5px;
+}
+
+.ql-editor {
+  font-size: 1.05rem;
 }

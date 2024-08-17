@@ -21,6 +21,7 @@ import {
 } from "../redux/user/userSlice";
 import { HashLoader } from "react-spinners";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const DashProfile = () => {
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -224,7 +225,12 @@ const DashProfile = () => {
           onChange={handleChange}
         />
 
-        <Button type="submit" className="gradient-bg" outline>
+        <Button
+          type="submit"
+          className="gradient-bg"
+          outline
+          disabled={loading || imageFileUploading}
+        >
           {loading ? (
             <>
               <HashLoader size={20} />
@@ -234,6 +240,13 @@ const DashProfile = () => {
             "Update"
           )}
         </Button>
+        {currentUser.isAdmin && (
+          <Link to="/create-post">
+            <Button type="button" className="gradient-bg w-full border-none">
+              Create a post
+            </Button>
+          </Link>
+        )}
       </form>
       <div className="text-red-500 flex justify-between mt-5">
         <span className="cursor-pointer" onClick={() => setShowModal(true)}>
