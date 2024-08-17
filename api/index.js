@@ -5,6 +5,7 @@ import userRoute from "./user/userRoute.js";
 import authRoute from "./auth/authRoute.js";
 import globalError from "./middlewares/globalError.js";
 import cookieParser from "cookie-parser";
+import postRoute from "./post/postRoute.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cookieParser());
 // Routes
 app.use("/api/user", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/post", postRoute);
 
 const serverStart = async () => {
   await dbConnect();
