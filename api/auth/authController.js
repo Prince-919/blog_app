@@ -46,7 +46,10 @@ export const signin = async (req, res, next) => {
       return next(errorHandler(400, "Invalid email or password"));
     }
 
-    const token = await jwt.sign({ id: user._id }, config.jwtSecret);
+    const token = await jwt.sign(
+      { id: user._id, isAdmin: user.isAdmin },
+      config.jwtSecret
+    );
 
     const { password: pass, ...rest } = user._doc;
 
@@ -66,7 +69,10 @@ export const google = async (req, res, next) => {
   try {
     const user = await User.findOne({ email });
     if (user) {
-      const token = await jwt.sign({ id: user._id }, config.jwtSecret);
+      const token = await jwt.sign(
+        { id: user._id, isAdmin: user.isAdmin },
+        config.jwtSecret
+      );
       const { password, ...rest } = user._doc;
       res
         .status(200)
@@ -90,7 +96,10 @@ export const google = async (req, res, next) => {
       });
 
       await newUser.save();
-      const token = await jwt.sign({ id: newUser._id }, config.jwtSecret);
+      const token = await jwt.sign(
+        { id: newUser._id, isAdmin: user.isAdmin },
+        config.jwtSecret
+      );
       const { password, ...rest } = newUser._doc;
       res
         .status(200)
