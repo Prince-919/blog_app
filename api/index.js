@@ -4,11 +4,13 @@ import { config } from "./config/config.js";
 import userRoute from "./user/userRoute.js";
 import authRoute from "./auth/authRoute.js";
 import globalError from "./middlewares/globalError.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
+app.use(cookieParser());
 // Routes
 app.use("/api/user", userRoute);
 app.use("/api/auth", authRoute);
