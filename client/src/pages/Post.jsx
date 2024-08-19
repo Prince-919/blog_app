@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { HashLoader } from "react-spinners";
 import CallToAction from "../components/CallToAction";
+import CommentSection from "../components/CommentSection";
 
 const Post = () => {
   const { postSlug } = useParams();
@@ -74,6 +75,7 @@ const Post = () => {
       <div className="w-full max-w-4xl mx-auto">
         <CallToAction />
       </div>
+      <CommentSection postId={post?._id} />
     </div>
   );
 };
