@@ -61,6 +61,13 @@ const DashSidebar = () => {
               </Sidebar.Item>
             </Link>
           )}
+          {currentUser.isAdmin && (
+            <Link to="/dashboard?tab=users">
+              <Sidebar.Item active={tab === "users"} as="div" icon={HiUser}>
+                Users
+              </Sidebar.Item>
+            </Link>
+          )}
           <Sidebar.Item
             icon={HiArrowSmRight}
             className="cursor-pointer"
