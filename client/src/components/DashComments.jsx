@@ -92,8 +92,8 @@ const DashComments = () => {
                     <Table.Cell className="text-gray-500">
                       {new Date(comment.updatedAt).toLocaleDateString()}
                     </Table.Cell>
-                    <Table.Cell className="dark:text-gray-500">
-                      {comment.content}
+                    <Table.Cell className="dark:text-gray-500 w-96">
+                      <p className="line-clamp-2">{comment.content}</p>
                     </Table.Cell>
                     <Table.Cell className="dark:text-gray-500">
                       {comment.numberOfLikes}
