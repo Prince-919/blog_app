@@ -91,6 +91,7 @@ const CommentSection = ({ postId }) => {
     );
   };
 
+<<<<<<< HEAD
   const handleDelete = async (commentId) => {
     setShowModal(false);
     try {
@@ -111,6 +112,8 @@ const CommentSection = ({ postId }) => {
     }
   };
 
+=======
+>>>>>>> cace9e5754f3067d1c7f2a96be278b3bb7824572
   return (
     <div className="w-full max-w-2xl mx-auto p-3">
       {currentUser ? (
@@ -183,10 +186,13 @@ const CommentSection = ({ postId }) => {
                 comment={comment}
                 onLike={handleLike}
                 onEdit={handleEdit}
+<<<<<<< HEAD
                 onDelete={(commentId) => {
                   setShowModal(true);
                   setCommentToDelete(commentId);
                 }}
+=======
+>>>>>>> cace9e5754f3067d1c7f2a96be278b3bb7824572
               />
             );
           })}
