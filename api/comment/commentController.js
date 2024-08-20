@@ -80,7 +80,6 @@ export const editComment = async (req, res, next) => {
     next(error);
   }
 };
-<<<<<<< HEAD
 export const deleteComment = async (req, res, next) => {
   try {
     const comment = await Comment.findById(req.params.commentId);
@@ -98,5 +97,3 @@ export const deleteComment = async (req, res, next) => {
     next(error);
   }
 };
-=======
->>>>>>> cace9e5754f3067d1c7f2a96be278b3bb7824572
